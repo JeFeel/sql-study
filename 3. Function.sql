@@ -92,9 +92,10 @@ SELECT REPLACE(char_4, ' ', '+')    AS char_4,
        REPLACE(varchar_6, ' ', '+') AS varchar_6
 FROM varchar_compare
 WHERE sn = '101'
-  AND char_4 = 'SQLD         '
+  AND char_4 = 'SQLD         '  -- 공백 오토 아님!
 ;
 
+--출력 안 됨
 SELECT REPLACE(char_4, ' ', '+')    AS char_4,
        REPLACE(varchar_6, ' ', '+') AS varchar_6
 FROM varchar_compare
@@ -104,7 +105,6 @@ WHERE sn = '101'
 
 --dual 테이블 용도
 -- 단순한 연산을 하는 더미 테이블
-
 
 -- # 단일행 함수
 -- ## 문자열 함수
@@ -123,8 +123,8 @@ SELECT CONCAT('SQL', 'Developer'),    -- 문자열을 결합
        TRIM('    HI   ')              -- 좌우 공백 제거
 FROM dual;
 
-SELECT RPAD('Steve', 10, '-'),                                         -- 오른쪽에 주어진 문자를 채움
-       LPAD('Steve', 10, '*'),                                         -- 왼쪽에 주어진 문자를 채움
+SELECT RPAD('Steve', 10, '-'),                                         -- 길이가 10이 되도록 오른쪽에 주어진 문자를 채움
+       LPAD('Steve', 10, '*'),                                         -- 길이가 10이 되도록 왼쪽에 주어진 문자를 채움
        REPLACE('Java Programmer Java', 'Java', 'BigData') AS "REPLACE" -- 문자를 변경
         ,
        REPLACE('Java Programmer', 'Java')                 AS "REPLACE" -- 문자를 제거
