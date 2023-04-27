@@ -17,3 +17,5 @@ SELECT * FROM person;
 ALTER TABLE person AUTO_INCREMENT = 1;
 SET @COUNT =0;
 UPDATE person SET id = @COUNT:=@COUNT+1;
+
+DROP TABLE person;
