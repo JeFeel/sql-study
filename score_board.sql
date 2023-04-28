@@ -13,10 +13,25 @@ CREATE TABLE tbl_score(
 
 SELECT *
 FROM tbl_score;
-
+use spring;
 -- stu_num 초기화
 ALTER TABLE tbl_score AUTO_INCREMENT = 1;
 SET @COUNT =0;
 UPDATE tbl_score SET stu_num = @COUNT:=@COUNT+1;
 
 DROP TABLE tbl_score;
+
+CREATE TABLE tbl_board (
+                           board_no INT(10) AUTO_INCREMENT PRIMARY KEY ,
+                           title VARCHAR(80) not null,
+                           content VARCHAR(2000),
+                           view_count int(10) DEFAULT  0,
+                           reg_date_time DATETIME DEFAULT  current_timestamp
+);
+
+SELECT *FROM tbl_board;
+USE spring;
+
+UPDATE tbl_board
+SET view_count = view_count + 1
+WHERE board_no = 1;
