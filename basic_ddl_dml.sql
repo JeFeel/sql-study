@@ -4,7 +4,7 @@ select *
 from TB_EMP;
 
 --테이블
--- 성적정보 저장 테이블=
+-- 성적정보 저장 테이블
 create table tbl_score
 (
     name    VARCHAR2(4) not null,
