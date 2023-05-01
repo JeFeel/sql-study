@@ -35,3 +35,9 @@ USE spring;
 UPDATE tbl_board
 SET view_count = view_count + 1
 WHERE board_no = 1;
+
+SELECT *
+FROM tbl_board
+ORDER BY board_no DESC
+LIMIT 20,6
+;
