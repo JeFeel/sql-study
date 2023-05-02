@@ -41,3 +41,37 @@ FROM tbl_board
 ORDER BY board_no DESC
 LIMIT 20,6
 ;
+
+SELECT *
+FROM tbl_board
+WHERE title LIKE concat('%', '40', '%')
+ORDER BY board_no DESC
+LIMIT 0,6;
+
+
+
+create table tbl_reply (
+                           reply_no INT(10) auto_increment,
+                           reply_text VARCHAR(1000) not null,
+                           reply_writer VARCHAR(100) not null,
+                           reply_date DATETIME default current_timestamp,
+                           board_no INT(10),
+                           constraint pk_reply primary key (reply_no),
+                           constraint fk_reply
+                               foreign key (board_no)
+                                   references tbl_board (board_no)
+                                   on delete cascade
+);
+
+SELECT *
+FROM tbl_reply;
+
+DROP table tbl_reply;
+
+TRUNCATE table tbl_board;
+
+SELECT *
+FROM tbl_board;
+SELECT *
+FROM tbl_reply
+WHERE  reply_no = 999;
