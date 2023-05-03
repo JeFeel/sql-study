@@ -75,3 +75,7 @@ FROM tbl_board;
 SELECT *
 FROM tbl_reply
 WHERE  reply_no = 999;
+
+SELECT *
+FROM tbl_reply
+WHERE  board_no = 298;
