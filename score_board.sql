@@ -78,4 +78,4 @@ WHERE  reply_no = 999;
 
 SELECT *
 FROM tbl_reply
-WHERE  board_no = 298;
+WHERE  board_no = 7;
